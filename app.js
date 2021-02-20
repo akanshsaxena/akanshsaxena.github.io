@@ -26,24 +26,48 @@ new fullpage("#fullpage", {
     bigSectionsDestination: null,
 });
 
-const text = ["ReactDOM.render(<h1>Hello World!</h1>)", "res.send('Hello World!')", "System.out.println('Hello World!')"]
-let count = 0
-let index = 0
+const text_desktop = ["ReactDOM.render(<h1>Hello World!</h1>)", "res.send('Hello World!')", "System.out.println('Hello World!')"]
+let count_desktop = 0
+let index_desktop = 0
 
-let currentText = '';
-let letter = '';
+let currentText_desktop = '';
+let letter_desktop = '';
 
-(function type() {
-    if (count === text.length) {
-        count = 0
+(function type_desktop() {
+    if (count_desktop === text_desktop.length) {
+        count_desktop = 0
     }
-    currentText = text[count]
-    letter = currentText.slice(0, ++index)
-    document.querySelector('#typing').textContent = letter
-    if (letter.length === currentText.length) {
-        count++
-        index = 0
+    currentText_desktop = text_desktop[count_desktop]
+    letter_desktop = currentText_desktop.slice(0, ++index_desktop)
+    document.querySelector('#typing-desktop').textContent = letter_desktop
+    if (letter_desktop.length === currentText_desktop.length) {
+        count_desktop++
+        index_desktop = 0
     }
-    setTimeout(type, 200)
+    setTimeout(type_desktop, 200)
+
+}())
+
+//Mobile View
+
+const text_mobile = ["Hello World!"]
+let count_mobile = 0
+let index_mobile = 0
+
+let currentText_mobile = '';
+let letter_mobile = '';
+
+(function type_mobile() {
+    if (count_mobile === text_mobile.length) {
+        count_mobile = 0
+    }
+    currentText_mobile = text_mobile[count_mobile]
+    letter_mobile = currentText_mobile.slice(0, ++index_mobile)
+    document.querySelector('#typing-mobile').textContent = letter_mobile
+    if (letter_mobile.length === currentText_mobile.length) {
+        count_mobile++
+        index_mobile = 0
+    }
+    setTimeout(type_mobile, 400)
 
 }())

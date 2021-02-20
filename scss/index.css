@@ -45,14 +45,14 @@
   padding: 65px;
 }
 
-.s1 .intro-div div #typing {
+.s1 .intro-div div #typing-desktop {
   font-size: 40px;
   color: #ffffff;
   font-weight: 300;
   position: relative;
 }
 
-.s1 .intro-div div #typing::after {
+.s1 .intro-div div #typing-desktop::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -60,6 +60,10 @@
   border-right: 3px solid #ffffff;
   -webkit-animation: blink 0.6s infinite ease;
           animation: blink 0.6s infinite ease;
+}
+
+.s1 .intro-div div #typing-mobile {
+  display: none;
 }
 
 .s1 .intro-div div #intro {
@@ -406,77 +410,121 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin: 0 auto;
-    height: 80vh;
   }
   .s1 .intro-div #profile-image {
+    position: relative;
+    top: -70px;
     width: 200px;
     height: 200px;
-    margin: 0 auto;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
   .s1 .intro-div div {
-    border: 1px solid black;
-    margin-top: -100px;
+    margin: 0;
+    margin-top: 10px;
     padding: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
-  .s1 .intro-div div #typing {
-    max-width: 30%;
-    font-size: 40px;
+  .s1 .intro-div div #typing-desktop {
+    display: none;
   }
-  .s1 .intro-div div #typing::after {
+  .s1 .intro-div div #typing-mobile {
+    display: block;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 300;
+  }
+  .s1 .intro-div div #typing-mobile::after {
+    content: "";
+    position: absolute;
+    width: 10px;
     height: 30px;
+    border-right: 3px solid #ffffff;
+    -webkit-animation: blink 0.7s infinite ease;
+            animation: blink 0.7s infinite ease;
   }
   .s1 .intro-div div #intro {
-    font-size: 15px;
+    padding-top: 10px;
+    text-align: left;
   }
   .s2 h1,
-  s3 h1 {
-    font-size: 20px;
+  .s3 h1 {
+    font-size: 30px;
+    margin-top: -100px;
+    padding: 0;
   }
   .s2 .timeline,
   .s2 .timeline1,
-  s3 .timeline,
-  s3 .timeline1 {
-    margin: 10px;
-    width: 90%;
+  .s3 .timeline,
+  .s3 .timeline1 {
+    margin: 0;
+    width: 80%;
+    padding: 20px;
   }
   .s2 .timeline::before,
   .s2 .timeline1::before,
-  s3 .timeline::before,
-  s3 .timeline1::before {
-    left: 90%;
+  .s3 .timeline::before,
+  .s3 .timeline1::before {
+    left: 10%;
+    height: 90vh;
   }
-  .s2 ul li,
-  s3 ul li {
-    width: 80%;
+  .s2 .timeline ul li,
+  .s2 .timeline1 ul li,
+  .s3 .timeline ul li,
+  .s3 .timeline1 ul li {
+    width: 200%;
+    padding: 20px;
   }
-  .s2 ul li:nth-child(odd), .s2 ul li:nth-child(even),
-  s3 ul li:nth-child(odd),
-  s3 ul li:nth-child(even) {
+  .s2 .timeline ul li:nth-child(odd),
+  .s2 .timeline1 ul li:nth-child(odd),
+  .s3 .timeline ul li:nth-child(odd),
+  .s3 .timeline1 ul li:nth-child(odd) {
     float: left;
-    -webkit-box-align: right;
-        -ms-flex-align: right;
-            align-items: right;
-    text-align: right;
+    position: relative;
+    left: -150px;
+    top: 40px;
+    padding: 40px 0;
   }
-  .s2 ul li:nth-child(odd)::before, .s2 ul li:nth-child(even)::before,
-  s3 ul li:nth-child(odd)::before,
-  s3 ul li:nth-child(even)::before {
-    top: 100px;
-    right: -10px;
+  .s2 .timeline ul li:nth-child(odd)::before,
+  .s2 .timeline1 ul li:nth-child(odd)::before,
+  .s3 .timeline ul li:nth-child(odd)::before,
+  .s3 .timeline1 ul li:nth-child(odd)::before {
+    top: 50px;
+    left: 157px;
+  }
+  .s2 .timeline ul li:nth-child(odd) .time,
+  .s2 .timeline1 ul li:nth-child(odd) .time,
+  .s3 .timeline ul li:nth-child(odd) .time,
+  .s3 .timeline1 ul li:nth-child(odd) .time {
+    position: absolute;
+    top: 170px;
+    right: 40px;
+  }
+  .s2 .timeline ul li:nth-child(even),
+  .s2 .timeline1 ul li:nth-child(even),
+  .s3 .timeline ul li:nth-child(even),
+  .s3 .timeline1 ul li:nth-child(even) {
+    float: left;
+    text-align: right;
+    position: relative;
+    left: -150px;
+    top: 40px;
+    padding: 40px 0;
+  }
+  .s2 .timeline ul li:nth-child(even)::before,
+  .s2 .timeline1 ul li:nth-child(even)::before,
+  .s3 .timeline ul li:nth-child(even)::before,
+  .s3 .timeline1 ul li:nth-child(even)::before {
+    top: 50px;
+    left: 157px;
+  }
+  .s2 .timeline ul li:nth-child(even) .time,
+  .s2 .timeline1 ul li:nth-child(even) .time,
+  .s3 .timeline ul li:nth-child(even) .time,
+  .s3 .timeline1 ul li:nth-child(even) .time {
+    position: absolute;
+    top: 170px;
+    left: 370px;
   }
 }
 /*# sourceMappingURL=index.css.map */
