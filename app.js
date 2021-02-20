@@ -71,3 +71,19 @@ let letter_mobile = '';
     setTimeout(type_mobile, 400)
 
 }())
+
+
+const social = document.getElementById("social");
+var bool = true;
+const socialContainer = document.getElementById("social-container");
+social.addEventListener("click", onClick)
+
+function onClick() {
+    if (socialContainer.style.display === "none") {
+        socialContainer.style.display = "block";
+        social.style.animation = "none";
+    } else {
+        socialContainer.style.display = "none";
+        social.style.animation = "zoom 1.5s infinite ease";
+    }
+}

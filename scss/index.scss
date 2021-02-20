@@ -9,6 +9,33 @@ $font-color: #ffffff;
   font-family: "Raleway", sans-serif;
 }
 
+.floating-desktop {
+  display: block;
+  position: fixed;
+  top: 40%;
+  left: 1%;
+  z-index: 999;
+  width: 40px;
+  border-radius: 2rem;
+  background: white;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+.floating-mobile {
+  display: none;
+}
+
+.svg-social {
+  cursor: pointer;
+  width: 100%;
+  padding: 5px;
+  transition: 0.3s ease all;
+  &:hover {
+    transform: scale(1.15);
+  }
+}
 .s1 {
   background-image: linear-gradient(
     to right bottom,
@@ -380,7 +407,51 @@ $font-color: #ffffff;
   }
 }
 
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+  0% {
+    transform: scale(1);
+  }
+}
 @media (min-width: 360px) and (max-width: 700px) {
+  .floating-desktop {
+    display: none;
+  }
+  .floating-mobile {
+    display: block;
+    position: fixed;
+    bottom: 2%;
+    right: 5%;
+    z-index: 999;
+    width: 50px;
+    // a {
+    //   background: white;
+    //   border-radius: 50%;
+    // }
+  }
+  #social-container {
+    display: none;
+  }
+  #social {
+    width: 100%;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 0;
+    animation: zoom 2s infinite ease;
+  }
+  .svg-social {
+    width: 100%;
+    background: white;
+    border-radius: 50%;
+    padding: 10px;
+    border: none;
+  }
   .s1 {
     .intro-div {
       display: flex;

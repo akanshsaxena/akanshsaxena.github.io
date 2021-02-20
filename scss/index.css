@@ -7,6 +7,36 @@
   font-family: "Raleway", sans-serif;
 }
 
+.floating-desktop {
+  display: block;
+  position: fixed;
+  top: 40%;
+  left: 1%;
+  z-index: 999;
+  width: 40px;
+  border-radius: 2rem;
+  background: white;
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.floating-mobile {
+  display: none;
+}
+
+.svg-social {
+  cursor: pointer;
+  width: 100%;
+  padding: 5px;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+
+.svg-social:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
 .s1 {
   background-image: -webkit-gradient(linear, left top, right bottom, from(#6c42b1), color-stop(#6854bd), color-stop(#6665c7), color-stop(#6675d0), color-stop(#6884d7), color-stop(#778fda), color-stop(#859ade), color-stop(#93a5e1), color-stop(#a9b1e3), color-stop(#bcbde5), color-stop(#cccae7), to(#dbd8e9));
   background-image: linear-gradient(to right bottom, #6c42b1, #6854bd, #6665c7, #6675d0, #6884d7, #778fda, #859ade, #93a5e1, #a9b1e3, #bcbde5, #cccae7, #dbd8e9);
@@ -413,7 +443,67 @@
   background: blue;
 }
 
+@-webkit-keyframes zoom {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 @media (min-width: 360px) and (max-width: 700px) {
+  .floating-desktop {
+    display: none;
+  }
+  .floating-mobile {
+    display: block;
+    position: fixed;
+    bottom: 2%;
+    right: 5%;
+    z-index: 999;
+    width: 50px;
+  }
+  #social-container {
+    display: none;
+  }
+  #social {
+    width: 100%;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 0;
+    -webkit-animation: zoom 2s infinite ease;
+            animation: zoom 2s infinite ease;
+  }
+  .svg-social {
+    width: 100%;
+    background: white;
+    border-radius: 50%;
+    padding: 10px;
+    border: none;
+  }
   .s1 .intro-div {
     display: -webkit-box;
     display: -ms-flexbox;
