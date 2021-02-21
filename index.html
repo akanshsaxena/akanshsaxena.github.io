@@ -42,6 +42,9 @@
     </div>
     <div id="fullpage">
       <section class="section s1">
+        <form method="get" action="/My Resume.pdf">
+          <button id="btn" type="submit">Download Resume!</button>
+        </form>
         <div class="intro-div">
           <img id="profile-image" src="/images/DSC_0256.JPG" />
           <div>
@@ -217,31 +220,49 @@
         <div class="skills-container">
           <div class="skill">
             <img src="/images/react-1.svg" />
+            <div class="mask"><h3>Beginner</h3></div>
           </div>
           <div class="skill">
             <img src="/images/node.png" />
+            <div class="mask"><h3>Beginner</h3></div>
           </div>
           <div class="skill">
             <img src="/images/express.png" />
+            <div class="mask"><h3>Beginner</h3></div>
           </div>
           <div class="skill">
             <img src="/images/js.png" />
+            <div class="mask"><h3>Intermidiate</h3></div>
           </div>
           <div class="skill" id="html-logo">
             <img src="/images/html.png" />
+            <div class="mask"><h3>Intermidiate</h3></div>
           </div>
           <div class="skill" id="css-img">
             <img src="/images/css.jpg" />
+            <div class="mask"><h3>Intermidiate</h3></div>
           </div>
           <div class="skill">
             <img src="/images/java.png" />
+            <div class="mask"><h3>Beginner</h3></div>
           </div>
           <div class="skill" id="mongo-logo">
             <img src="/images/mongo.png" />
+            <div class="mask"><h3>Beginner</h3></div>
           </div>
         </div>
       </section>
     </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+      integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+      integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
+      crossorigin="anonymous"
+    ></script>
     <script src="./fullpage.min.js"></script>
     <script src="app.js"></script>
   </body>

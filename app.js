@@ -3,27 +3,20 @@ new fullpage("#fullpage", {
     scrollingSpeed: 300,
     navigation: true,
     autoScrolling: true,
-    fitToSection: true,
-    fitToSectionDelay: 1000,
-    scrollBar: false,
-    easing: 'easeInOutCubic',
-    easingcss3: 'ease',
-    loopBottom: false,
-    loopTop: false,
-    loopHorizontal: true,
-    continuousVertical: false,
-    continuousHorizontal: false,
-    scrollHorizontally: false,
-    interlockedSlides: false,
-    dragAndMove: true,
-    offsetSections: false,
-    resetSliders: false,
-    fadingEffect: false,
-    scrollOverflow: false,
-    scrollOverflowReset: false,
-    scrollOverflowOptions: null,
-    touchSensitivity: 15,
-    bigSectionsDestination: null,
+    onLeave: (origin, destination, direction) => {
+        const section = destination.item;
+        const social = section.querySelector('div');
+        const t1 = new TimelineMax({
+            delay: 0.5
+        });
+        t1.fromTo(social, 0.5, {
+            y: '50',
+            opacity: '0'
+        }, {
+            y: 0,
+            opacity: '1'
+        });
+    },
 });
 
 const text_desktop = ["ReactDOM.render(<h1>Hello World!</h1>)", "res.send('Hello World!')", "System.out.println('Hello World!')"]
@@ -74,7 +67,6 @@ let letter_mobile = '';
 
 
 const social = document.getElementById("social");
-var bool = true;
 const socialContainer = document.getElementById("social-container");
 social.addEventListener("click", onClick)
 

@@ -42,6 +42,26 @@
   background-image: linear-gradient(to right bottom, #6c42b1, #6854bd, #6665c7, #6675d0, #6884d7, #778fda, #859ade, #93a5e1, #a9b1e3, #bcbde5, #cccae7, #dbd8e9);
 }
 
+.s1 form #btn {
+  position: absolute;
+  bottom: 20%;
+  right: 15%;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  border-radius: 2rem;
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+  font-weight: 800;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.s1 form #btn:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
 .s1 .intro-div {
   margin: 0 auto;
   display: -webkit-box;
@@ -411,18 +431,47 @@
 .s4 .skills-container .skill {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
+  width: 150px;
+  height: 150px;
 }
 
 .s4 .skills-container .skill img {
-  width: 150px;
-  height: 150px;
+  width: 100%;
   -o-object-fit: fit;
      object-fit: fit;
 }
 
-.s4 .skills-container .skill:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+.s4 .skills-container .skill .mask {
+  position: relative;
+  top: -103%;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: #e04242;
+  -webkit-box-shadow: 1px 1px 1px 1px #e04242;
+          box-shadow: 1px 1px 1px 1px #e04242;
+  opacity: 0;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.s4 .skills-container .skill .mask h3 {
+  font-weight: 300;
+  font-size: 1.2rem;
+  position: relative;
+  float: left;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.s4 .skills-container .skill:hover .mask {
+  opacity: 0.85;
+}
+
+.s4 .skills-container .skill:hover .mask h3 {
+  opacity: 1;
 }
 
 .s4 .skills-container #html-logo {
@@ -435,6 +484,10 @@
   width: 150px;
   height: 150px;
   background: #c1bebc;
+}
+
+.s4 .skills-container #mongo-logo .mask {
+  top: -87%;
 }
 
 .s4 .skills-container #css-image {
@@ -502,10 +555,18 @@
   .svg-social {
     width: 100%;
     background: white;
-    border-radius: 50%;
+    border-radius: 1rem;
+    outline: none;
     padding: 10px;
+    border: 0;
     -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+  }
+  .s1 form #btn {
+    bottom: 15%;
+    right: 10%;
+    font-size: 0.7rem;
+    padding: 5px 15px;
   }
   .s1 .intro-div {
     display: -webkit-box;
@@ -669,13 +730,19 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 50px;
   }
-  .s4 .skills-container .skill img {
+  .s4 .skills-container .skill {
     width: 100px;
     height: 100px;
+  }
+  .s4 .skills-container .skill img {
+    width: 100%;
+  }
+  .s4 .skills-container .skill .mask {
+    display: none;
   }
   .s4 .skills-container #html-logo,
   .s4 .skills-container #mongo-logo {

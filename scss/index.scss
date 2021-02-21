@@ -23,6 +23,7 @@ $font-color: #ffffff;
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
 }
+
 .floating-mobile {
   display: none;
 }
@@ -32,26 +33,48 @@ $font-color: #ffffff;
   width: 100%;
   padding: 5px;
   transition: 0.3s ease all;
+
   &:hover {
     transform: scale(1.15);
   }
 }
+
 .s1 {
-  background-image: linear-gradient(
-    to right bottom,
-    #6c42b1,
-    #6854bd,
-    #6665c7,
-    #6675d0,
-    #6884d7,
-    #778fda,
-    #859ade,
-    #93a5e1,
-    #a9b1e3,
-    #bcbde5,
-    #cccae7,
-    #dbd8e9
-  );
+  background-image: linear-gradient(to right bottom,
+      #6c42b1,
+      #6854bd,
+      #6665c7,
+      #6675d0,
+      #6884d7,
+      #778fda,
+      #859ade,
+      #93a5e1,
+      #a9b1e3,
+      #bcbde5,
+      #cccae7,
+      #dbd8e9);
+
+  form {
+    #btn {
+      position: absolute;
+      bottom: 20%;
+      right: 15%;
+      padding: 10px 25px;
+      border: none;
+      cursor: pointer;
+      border-radius: 2rem;
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);
+      font-weight: 800;
+      transition: 0.3s all ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
 
   .intro-div {
     margin: 0 auto;
@@ -116,21 +139,19 @@ $font-color: #ffffff;
 
 .s2,
 .s3 {
-  background-image: linear-gradient(
-    to right bottom,
-    #008f7a,
-    #1e9a86,
-    #31a592,
-    #40b19f,
-    #4ebcab,
-    #5dc4b4,
-    #6bcbbd,
-    #79d3c6,
-    #8ad9cd,
-    #9bded4,
-    #aae4db,
-    #bae9e2
-  );
+  background-image: linear-gradient(to right bottom,
+      #008f7a,
+      #1e9a86,
+      #31a592,
+      #40b19f,
+      #4ebcab,
+      #5dc4b4,
+      #6bcbbd,
+      #79d3c6,
+      #8ad9cd,
+      #9bded4,
+      #aae4db,
+      #bae9e2);
 
   h1 {
     font-size: 50px;
@@ -294,21 +315,19 @@ $font-color: #ffffff;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-image: linear-gradient(
-    to right bottom,
-    #c34a36,
-    #ca5440,
-    #d05e4b,
-    #d76855,
-    #dd7260,
-    #e17b6a,
-    #e48574,
-    #e78e7e,
-    #e8998a,
-    #e8a397,
-    #e8aea3,
-    #e7b8b0
-  );
+  background-image: linear-gradient(to right bottom,
+      #c34a36,
+      #ca5440,
+      #d05e4b,
+      #d76855,
+      #dd7260,
+      #e17b6a,
+      #e48574,
+      #e78e7e,
+      #e8998a,
+      #e8a397,
+      #e8aea3,
+      #e7b8b0);
 
   .timeline1 {
     padding: 0;
@@ -343,21 +362,19 @@ $font-color: #ffffff;
 }
 
 .s4 {
-  background-image: linear-gradient(
-    to right bottom,
-    #ae5d00,
-    #b16512,
-    #b46c1f,
-    #b6742b,
-    #b97b36,
-    #bd8443,
-    #c28c51,
-    #c6955e,
-    #cda272,
-    #d4ae86,
-    #dabb9a,
-    #e0c8af
-  );
+  background-image: linear-gradient(to right bottom,
+      #ae5d00,
+      #b16512,
+      #b46c1f,
+      #b6742b,
+      #b97b36,
+      #bd8443,
+      #c28c51,
+      #c6955e,
+      #cda272,
+      #d4ae86,
+      #dabb9a,
+      #e0c8af);
 
   h1 {
     font-size: 50px;
@@ -376,15 +393,46 @@ $font-color: #ffffff;
 
     .skill {
       transition: 0.3s all;
+      width: 150px;
+      height: 150px;
+
 
       img {
-        width: 150px;
-        height: 150px;
+        width: 100%;
         object-fit: fit;
       }
 
+      .mask {
+        position: relative;
+        top: -103%;
+        width: 100%;
+        height: 100%;
+        color: white;
+        background: #e04242;
+        box-shadow: 1px 1px 1px 1px #e04242;
+        opacity: 0;
+        transition: 0.3s all ease;
+
+        h3 {
+          //margin-top: 20px;
+          font-weight: 300;
+          font-size: 1.2rem;
+          position: relative;
+          float: left;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
       &:hover {
-        transform: scale(1.05);
+        .mask {
+          opacity: 0.85;
+
+          h3 {
+            opacity: 1;
+          }
+        }
       }
     }
 
@@ -398,7 +446,12 @@ $font-color: #ffffff;
       width: 150px;
       height: 150px;
       background: #c1bebc;
+
+      .mask {
+        top: -87%;
+      }
     }
+
     #css-image {
       width: 150px;
       height: 150px;
@@ -411,17 +464,21 @@ $font-color: #ffffff;
   0% {
     transform: scale(1);
   }
+
   100% {
     transform: scale(1.2);
   }
+
   0% {
     transform: scale(1);
   }
 }
+
 @media (min-width: 360px) and (max-width: 700px) {
   .floating-desktop {
     display: none;
   }
+
   .floating-mobile {
     display: block;
     position: fixed;
@@ -434,9 +491,11 @@ $font-color: #ffffff;
     //   border-radius: 50%;
     // }
   }
+
   #social-container {
     display: none;
   }
+
   #social {
     width: 100%;
     background: white;
@@ -449,17 +508,31 @@ $font-color: #ffffff;
       0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
       0 100px 80px rgba(0, 0, 0, 0.12);
   }
+
   .svg-social {
     width: 100%;
     background: white;
-    border-radius: 50%;
+    border-radius: 1rem;
+    outline: none;
     padding: 10px;
+    border: 0;
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
       0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
       0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
       0 100px 80px rgba(0, 0, 0, 0.12);
   }
+
   .s1 {
+
+    form {
+      #btn {
+        bottom: 15%;
+        right: 10%;
+        font-size: 0.7rem;
+        padding: 5px 15px;
+      }
+    }
+
     .intro-div {
       display: flex;
       flex-direction: column;
@@ -504,6 +577,7 @@ $font-color: #ffffff;
       }
     }
   }
+
 
   .s2,
   .s3 {
@@ -583,14 +657,17 @@ $font-color: #ffffff;
       }
     }
   }
+
   .s3 {
     .timeline1 {
       margin: 0;
       height: 100vh;
       padding: 0 20px;
+
       &::before {
         height: 80vh;
       }
+
       ul {
         li {
           &:nth-child(odd) {
@@ -598,8 +675,10 @@ $font-color: #ffffff;
               margin-top: 0px;
             }
           }
+
           &:nth-child(even) {
             margin-top: 0px;
+
             .time {
               left: 75%;
               right: 8%;
@@ -609,22 +688,32 @@ $font-color: #ffffff;
       }
     }
   }
+
   .s4 {
     h1 {
       font-size: 30px;
     }
+
     .skills-container {
       grid-template-columns: repeat(2, 1fr);
       align-items: center;
-      width: 60%;
+      width: 50%;
       margin: 0 auto;
-      margin-top: 100px;
+      margin-top: 50px;
+
       .skill {
+        width: 100px;
+        height: 100px;
+
         img {
-          width: 100px;
-          height: 100px;
+          width: 100%;
+        }
+
+        .mask {
+          display: none;
         }
       }
+
       #html-logo,
       #mongo-logo {
         width: 100px;
